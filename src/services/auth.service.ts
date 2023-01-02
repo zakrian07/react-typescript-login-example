@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = "https://node-kmcimpcbua-uc.a.run.app/api/";
 
 class AuthService {
   login(username: string, password: string) {
     return axios
-      .post(API_URL + "signin", {
+      .post(API_URL + "login", {
         username,
         password
       })
@@ -14,7 +14,7 @@ class AuthService {
           localStorage.setItem("user", JSON.stringify(response.data));
         }
 
-        return response.data;
+        alert(" logged in");
       });
   }
 
